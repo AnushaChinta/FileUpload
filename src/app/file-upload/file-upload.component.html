@@ -1,0 +1,23 @@
+<div class="continer">
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-6">
+            <div class="border p-5 text-center" (click)="triggerFileInput($event)" (drop)="onFileDropped($event)"
+                (dragover)="onDragOver($event)">
+                <p class="">Drag and drop pdf files</p>
+
+            </div>
+            <input type="file" accept=".pdf" (change)="onFileChange($event)" id="fileInput" class="hide">
+
+            <div *ngIf="selectedFile">
+                {{selectedFile?.name}}
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-6">
+            <button type="toggle" (click)="Save()" class="btn btn-sm btn-primary">
+                Swipe
+            </button>
+        </div>
+    </div>
+</div>
